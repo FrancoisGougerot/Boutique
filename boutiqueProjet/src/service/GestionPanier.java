@@ -9,5 +9,5 @@ public interface GestionPanier {
     public void enleverPanier(Produit produit);
     public void viderPanier();
     public void afficherPanier();
-    public int getPrixTotal();
+    public double getPrixTotal();
 }
