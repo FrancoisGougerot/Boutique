@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xml:lang="en" lang="en">
+<f:view>
+    <h:head>
+        <h:outputStylesheet>
+            th, td {
+                text-align: center;
+            }
+
+            h3 {
+                margin-top: 0;
+                text-align: center;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                box-sizing: border-box;
+                -webkit-box-sizing:border-box;
+                -moz-box-sizing: border-box;
+            }
+
+        </h:outputStylesheet>
+    </h:head>
+    <h:body>
+        <p:outputPanel>
+            <h3>Cart Overview</h3>
+            <div class="ui-g">
+                <div class="ui-g-2"/>
+                <div class="ui-g-8">
+                    <h:form id="cartForm">
+                        <p:growl id="growl" sticky="true"/>
+                        <p:dataTable id="cartFromList" var="cart" value="#{cartService.cartList}">
+                            <p:column headerText="cartId">
+                                <h:outputText value="#{cart.cartId}"/>
+                            </p:column>
+                            <p:column headerText="Product Name">
+                                <h:outputText value="#{cart.productName}"/>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </div>
+                <div class="ui-g-2"></div>
+            </div>
+        </p:outputPanel>
+    </h:body>
+</f:view>
+</html>
